@@ -1,5 +1,10 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+import 'data/database.dart';
+import 'data/models/place.dart';
 
 void main() {
   runApp(const MyApp());
@@ -56,7 +61,23 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
+  Future<void> _insert_retreive() async {
+    final database = await $FloorAppDatabase.databaseBuilder('app_database.db').build();
+
+    final placeDao = database.placeDao;
+
+    final place = Place(3, 'Djemila2', 'Djemila2', 'Djemila2', 2.0416, 4.0006, 'Djemila se situe à Setif', 'Djemila se situe à Setif', 'Djemila se situe à Setif');
+
+    await placeDao.insertPlace(place);
+    final result = await placeDao.findPlaceById(1);
+
+    print("\n ********************* \n");
+    inspect(result);
+    print("\n *********************** \n");
+  }
+
   void _incrementCounter() {
+
     setState(() {
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below
@@ -112,7 +133,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: _insert_retreive,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
