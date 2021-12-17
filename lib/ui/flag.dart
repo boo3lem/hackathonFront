@@ -624,7 +624,6 @@ class FlagPageState extends State<FlagPage> {
                   child: Ink(
                     height: scale(15),
                     width: scale(15),
-
                     decoration: BoxDecoration(
                       border: Border.all(width: 3, color: Colors.blue[300]!),
                       borderRadius: BorderRadius.only(
