@@ -65,7 +65,7 @@ class _BottomBarState extends State<BottomBar>
           final isBottomBarOpen = isBottomBarOpenAsync.data as bool;
           return AnimatedPositioned(
             duration: _animationDuration,
-            top: isBottomBarOpen ? screenHeight/6 : screenHeight/6*5.65,
+            top: isBottomBarOpen ? screenHeight/3.9 : screenHeight/6*5.8,
             bottom: 0,
             left: 0,
             right: 0,
