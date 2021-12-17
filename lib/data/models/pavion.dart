@@ -3,13 +3,12 @@ import 'dart:ffi';
 import 'package:floor/floor.dart';
 
 @entity
-class Terminal{
+class Pavion{
   @primaryKey
   final int id;
+  final String title;
   final double lat;
   final double lng;
-  final String title;
 
-  Terminal(this.id, this.lat, this.lng, this.title);
-
+  Pavion(this.id, this.title, this.lat, this.lng);
 }

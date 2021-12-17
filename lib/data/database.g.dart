@@ -61,9 +61,13 @@ class _$AppDatabase extends AppDatabase {
     changeListener = listener ?? StreamController<String>.broadcast();
   }
 
-  PlaceDao? _placeDaoInstance;
+  PavionDao? _pavionDaoInstance;
 
   TerminalDao? _terminalDaoInstance;
+
+  ExposantDao? _exposantDaoInstance;
+
+  StandDao? _standDaoInstance;
 
   Future<sqflite.Database> open(String path, List<Migration> migrations,
       [Callback? callback]) async {
@@ -84,9 +88,13 @@ class _$AppDatabase extends AppDatabase {
       },
       onCreate: (database, version) async {
         await database.execute(
-            'CREATE TABLE IF NOT EXISTS `Place` (`id` INTEGER NOT NULL, `title_ar` TEXT NOT NULL, `title_fr` TEXT NOT NULL, `title_en` TEXT NOT NULL, `lant` REAL NOT NULL, `lang` REAL NOT NULL, `description_ar` TEXT NOT NULL, `description_fr` TEXT NOT NULL, `description_en` TEXT NOT NULL, PRIMARY KEY (`id`))');
+            'CREATE TABLE IF NOT EXISTS `Pavion` (`id` INTEGER NOT NULL, `title` TEXT NOT NULL, `lat` REAL NOT NULL, `lng` REAL NOT NULL, PRIMARY KEY (`id`))');
         await database.execute(
-            'CREATE TABLE IF NOT EXISTS `Terminal` (`id` INTEGER NOT NULL, `lant` REAL NOT NULL, `lang` REAL NOT NULL, `title` TEXT NOT NULL, PRIMARY KEY (`id`))');
+            'CREATE TABLE IF NOT EXISTS `Terminal` (`id` INTEGER NOT NULL, `lat` REAL NOT NULL, `lng` REAL NOT NULL, `title` TEXT NOT NULL, PRIMARY KEY (`id`))');
+        await database.execute(
+            'CREATE TABLE IF NOT EXISTS `Exposant` (`id` INTEGER NOT NULL, `title` TEXT NOT NULL, `description` TEXT NOT NULL, `website` TEXT NOT NULL, `logo` TEXT NOT NULL, PRIMARY KEY (`id`))');
+        await database.execute(
+            'CREATE TABLE IF NOT EXISTS `Stand` (`id` INTEGER NOT NULL, `title` TEXT NOT NULL, `idPavion` INTEGER NOT NULL, `idExposant` INTEGER NOT NULL, PRIMARY KEY (`id`))');
 
         await callback?.onCreate?.call(database, version);
       },
@@ -95,32 +103,37 @@ class _$AppDatabase extends AppDatabase {
   }
 
   @override
-  PlaceDao get placeDao {
-    return _placeDaoInstance ??= _$PlaceDao(database, changeListener);
+  PavionDao get pavionDao {
+    return _pavionDaoInstance ??= _$PavionDao(database, changeListener);
   }
 
   @override
   TerminalDao get terminalDao {
     return _terminalDaoInstance ??= _$TerminalDao(database, changeListener);
   }
+
+  @override
+  ExposantDao get exposantDao {
+    return _exposantDaoInstance ??= _$ExposantDao(database, changeListener);
+  }
+
+  @override
+  StandDao get standDao {
+    return _standDaoInstance ??= _$StandDao(database, changeListener);
+  }
 }
 
-class _$PlaceDao extends PlaceDao {
-  _$PlaceDao(this.database, this.changeListener)
+class _$PavionDao extends PavionDao {
+  _$PavionDao(this.database, this.changeListener)
       : _queryAdapter = QueryAdapter(database, changeListener),
-        _placeInsertionAdapter = InsertionAdapter(
+        _pavionInsertionAdapter = InsertionAdapter(
             database,
-            'Place',
-            (Place item) => <String, Object?>{
+            'Pavion',
+            (Pavion item) => <String, Object?>{
                   'id': item.id,
-                  'title_ar': item.title_ar,
-                  'title_fr': item.title_fr,
-                  'title_en': item.title_en,
-                  'lant': item.lant,
-                  'lang': item.lang,
-                  'description_ar': item.description_ar,
-                  'description_fr': item.description_fr,
-                  'description_en': item.description_en
+                  'title': item.title,
+                  'lat': item.lat,
+                  'lng': item.lng
                 },
             changeListener);
 
@@ -130,44 +143,31 @@ class _$PlaceDao extends PlaceDao {
 
   final QueryAdapter _queryAdapter;
 
-  final InsertionAdapter<Place> _placeInsertionAdapter;
+  final InsertionAdapter<Pavion> _pavionInsertionAdapter;
 
   @override
-  Future<List<Place>> findAllPlaces() async {
-    return _queryAdapter.queryList('SELECT * FROM Place',
-        mapper: (Map<String, Object?> row) => Place(
+  Future<List<Pavion>> findAllPavions() async {
+    return _queryAdapter.queryList('SELECT * FROM Pavion',
+        mapper: (Map<String, Object?> row) => Pavion(
             row['id'] as int,
-            row['title_ar'] as String,
-            row['title_fr'] as String,
-            row['title_en'] as String,
-            row['lant'] as double,
-            row['lang'] as double,
-            row['description_ar'] as String,
-            row['description_fr'] as String,
-            row['description_en'] as String));
+            row['title'] as String,
+            row['lat'] as double,
+            row['lng'] as double));
   }
 
   @override
-  Stream<Place?> findPlaceById(int id) {
-    return _queryAdapter.queryStream('SELECT * FROM Place WHERE id = ?1',
-        mapper: (Map<String, Object?> row) => Place(
-            row['id'] as int,
-            row['title_ar'] as String,
-            row['title_fr'] as String,
-            row['title_en'] as String,
-            row['lant'] as double,
-            row['lang'] as double,
-            row['description_ar'] as String,
-            row['description_fr'] as String,
-            row['description_en'] as String),
+  Stream<Pavion?> findPavionById(int id) {
+    return _queryAdapter.queryStream('SELECT * FROM Pavion WHERE id = ?1',
+        mapper: (Map<String, Object?> row) => Pavion(row['id'] as int,
+            row['title'] as String, row['lat'] as double, row['lng'] as double),
         arguments: [id],
-        queryableName: 'Place',
+        queryableName: 'Pavion',
         isView: false);
   }
 
   @override
-  Future<void> insertPlace(Place place) async {
-    await _placeInsertionAdapter.insert(place, OnConflictStrategy.abort);
+  Future<void> insertPavion(Pavion pavion) async {
+    await _pavionInsertionAdapter.insert(pavion, OnConflictStrategy.abort);
   }
 }
 
@@ -179,8 +179,8 @@ class _$TerminalDao extends TerminalDao {
             'Terminal',
             (Terminal item) => <String, Object?>{
                   'id': item.id,
-                  'lant': item.lant,
-                  'lang': item.lang,
+                  'lat': item.lat,
+                  'lng': item.lng,
                   'title': item.title
                 },
             changeListener);
@@ -198,19 +198,16 @@ class _$TerminalDao extends TerminalDao {
     return _queryAdapter.queryList('SELECT * FROM Terminal',
         mapper: (Map<String, Object?> row) => Terminal(
             row['id'] as int,
-            row['lant'] as double,
-            row['lang'] as double,
+            row['lat'] as double,
+            row['lng'] as double,
             row['title'] as String));
   }
 
   @override
   Stream<Terminal?> findPlaceById(int id) {
     return _queryAdapter.queryStream('SELECT * FROM Terminal WHERE id = ?1',
-        mapper: (Map<String, Object?> row) => Terminal(
-            row['id'] as int,
-            row['lant'] as double,
-            row['lang'] as double,
-            row['title'] as String),
+        mapper: (Map<String, Object?> row) => Terminal(row['id'] as int,
+            row['lat'] as double, row['lng'] as double, row['title'] as String),
         arguments: [id],
         queryableName: 'Terminal',
         isView: false);
@@ -219,5 +216,104 @@ class _$TerminalDao extends TerminalDao {
   @override
   Future<void> insertPlace(Terminal terminal) async {
     await _terminalInsertionAdapter.insert(terminal, OnConflictStrategy.abort);
+  }
+}
+
+class _$ExposantDao extends ExposantDao {
+  _$ExposantDao(this.database, this.changeListener)
+      : _queryAdapter = QueryAdapter(database),
+        _exposantInsertionAdapter = InsertionAdapter(
+            database,
+            'Exposant',
+            (Exposant item) => <String, Object?>{
+                  'id': item.id,
+                  'title': item.title,
+                  'description': item.description,
+                  'website': item.website,
+                  'logo': item.logo
+                });
+
+  final sqflite.DatabaseExecutor database;
+
+  final StreamController<String> changeListener;
+
+  final QueryAdapter _queryAdapter;
+
+  final InsertionAdapter<Exposant> _exposantInsertionAdapter;
+
+  @override
+  Future<List<Exposant>> findAllExposants() async {
+    return _queryAdapter.queryList('SELECT * FROM Exposant',
+        mapper: (Map<String, Object?> row) => Exposant(
+            row['id'] as int,
+            row['title'] as String,
+            row['description'] as String,
+            row['website'] as String,
+            row['logo'] as String));
+  }
+
+  @override
+  Future<Exposant?> findExposantById(int id) async {
+    return _queryAdapter.query('SELECT * FROM Exposant WHERE id = ?1',
+        mapper: (Map<String, Object?> row) => Exposant(
+            row['id'] as int,
+            row['title'] as String,
+            row['description'] as String,
+            row['website'] as String,
+            row['logo'] as String),
+        arguments: [id]);
+  }
+
+  @override
+  Future<void> insertExposant(Exposant exposant) async {
+    await _exposantInsertionAdapter.insert(exposant, OnConflictStrategy.abort);
+  }
+}
+
+class _$StandDao extends StandDao {
+  _$StandDao(this.database, this.changeListener)
+      : _queryAdapter = QueryAdapter(database),
+        _standInsertionAdapter = InsertionAdapter(
+            database,
+            'Stand',
+            (Stand item) => <String, Object?>{
+                  'id': item.id,
+                  'title': item.title,
+                  'idPavion': item.idPavion,
+                  'idExposant': item.idExposant
+                });
+
+  final sqflite.DatabaseExecutor database;
+
+  final StreamController<String> changeListener;
+
+  final QueryAdapter _queryAdapter;
+
+  final InsertionAdapter<Stand> _standInsertionAdapter;
+
+  @override
+  Future<List<Stand>> findAllStands() async {
+    return _queryAdapter.queryList('SELECT * FROM Stand',
+        mapper: (Map<String, Object?> row) => Stand(
+            row['id'] as int,
+            row['title'] as String,
+            row['idPavion'] as int,
+            row['idExposant'] as int));
+  }
+
+  @override
+  Future<Stand?> findStandById(int id) async {
+    return _queryAdapter.query('SELECT * FROM Stand WHERE id = ?1',
+        mapper: (Map<String, Object?> row) => Stand(
+            row['id'] as int,
+            row['title'] as String,
+            row['idPavion'] as int,
+            row['idExposant'] as int),
+        arguments: [id]);
+  }
+
+  @override
+  Future<void> insertStand(Stand stand) async {
+    await _standInsertionAdapter.insert(stand, OnConflictStrategy.abort);
   }
 }

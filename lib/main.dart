@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'data/database.dart';
-import 'data/models/place.dart';
+import 'data/models/pavion.dart';
 
 void main() {
   runApp(const MyApp());
@@ -35,7 +35,12 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: Scaffold(
+        drawer: Drawer(
+          child: Container(),
+        ),
+        body: const MyHomePage(title: 'Flutter Demo Home Page'),
+      ),
     );
   }
 }
@@ -64,12 +69,12 @@ class _MyHomePageState extends State<MyHomePage> {
   Future<void> _insert_retreive() async {
     final database = await $FloorAppDatabase.databaseBuilder('app_database.db').build();
 
-    final placeDao = database.placeDao;
+    final pavionDao = database.pavionDao;
 
-    final place = Place(3, 'Djemila2', 'Djemila2', 'Djemila2', 2.0416, 4.0006, 'Djemila se situe à Setif', 'Djemila se situe à Setif', 'Djemila se situe à Setif');
+    final pavion = Pavion(1, 'Pavion A', 0.1655, 1.6271);
 
-    await placeDao.insertPlace(place);
-    final result = await placeDao.findPlaceById(1);
+    await pavionDao.insertPavion(pavion);
+    final result = await pavionDao.findPavionById(1);
 
     print("\n ********************* \n");
     inspect(result);
