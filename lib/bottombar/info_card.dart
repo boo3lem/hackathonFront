@@ -75,7 +75,6 @@ class _InfoCardState extends State<InfoCard>
                 Container(
                   height: screenWidth / 20,
                   width: screenWidth / 5 * 2.95,
-                  color: Colors.red,
                 ),
                 Expanded(
                   child: Align(
