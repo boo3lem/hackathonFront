@@ -9,6 +9,9 @@ abstract class StandDao {
   @Query('SELECT * FROM Stand WHERE id = :id')
   Future<Stand?> findStandById(int id);
 
+  @Query('SELECT * FROM Stand WHERE title LIKE :motif')
+  Future<Stand?> findStandByTitle(String motif);
+
   @insert
   Future<void> insertStand(Stand stand);
 

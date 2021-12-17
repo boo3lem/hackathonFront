@@ -9,6 +9,9 @@ abstract class PavionDao {
   @Query('SELECT * FROM Pavion WHERE id = :id')
   Stream<Pavion?> findPavionById(int id);
 
+  @Query('SELECT * FROM Pavion WHERE title LIKE :motif')
+  Future<Pavion?> findPavionByTitle(String motif);
+
   @insert
   Future<void> insertPavion(Pavion pavion);
 

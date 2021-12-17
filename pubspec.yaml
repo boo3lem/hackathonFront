@@ -39,6 +39,9 @@ dependencies:
   rxdart: ^0.27.1
   material_floating_search_bar: ^0.3.6
   sliding_up_panel: ^2.0.0
+  anim_search_bar: ^2.0.2
+  material_design_icons_flutter: 5.0.6595
+  flappy_search_bar_ns: ^2.0.2
 
 dev_dependencies:
   flutter_test:

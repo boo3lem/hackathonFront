@@ -9,6 +9,9 @@ abstract class ExposantDao {
   @Query('SELECT * FROM Exposant WHERE id = :id')
   Future<Exposant?> findExposantById(int id);
 
+  @Query('SELECT * FROM Exposant WHERE title LIKE :motif')
+  Future<Exposant?> findExposantByTitle(String motif);
+
   @insert
   Future<void> insertExposant(Exposant exposant);
 

@@ -166,6 +166,14 @@ class _$PavionDao extends PavionDao {
   }
 
   @override
+  Future<Pavion?> findPavionByTitle(String motif) async {
+    return _queryAdapter.query('SELECT * FROM Pavion WHERE title LIKE ?1',
+        mapper: (Map<String, Object?> row) => Pavion(row['id'] as int,
+            row['title'] as String, row['lat'] as double, row['lng'] as double),
+        arguments: [motif]);
+  }
+
+  @override
   Future<void> insertPavion(Pavion pavion) async {
     await _pavionInsertionAdapter.insert(pavion, OnConflictStrategy.abort);
   }
@@ -211,6 +219,14 @@ class _$TerminalDao extends TerminalDao {
         arguments: [id],
         queryableName: 'Terminal',
         isView: false);
+  }
+
+  @override
+  Future<Terminal?> findTerminalByTitle(String motif) async {
+    return _queryAdapter.query('SELECT * FROM Terminal WHERE title LIKE ?1',
+        mapper: (Map<String, Object?> row) => Terminal(row['id'] as int,
+            row['lat'] as double, row['lng'] as double, row['title'] as String),
+        arguments: [motif]);
   }
 
   @override
@@ -265,6 +281,18 @@ class _$ExposantDao extends ExposantDao {
   }
 
   @override
+  Future<Exposant?> findExposantByTitle(String motif) async {
+    return _queryAdapter.query('SELECT * FROM Exposant WHERE title LIKE ?1',
+        mapper: (Map<String, Object?> row) => Exposant(
+            row['id'] as int,
+            row['title'] as String,
+            row['description'] as String,
+            row['website'] as String,
+            row['logo'] as String),
+        arguments: [motif]);
+  }
+
+  @override
   Future<void> insertExposant(Exposant exposant) async {
     await _exposantInsertionAdapter.insert(exposant, OnConflictStrategy.abort);
   }
@@ -310,6 +338,17 @@ class _$StandDao extends StandDao {
             row['idPavion'] as int,
             row['idExposant'] as int),
         arguments: [id]);
+  }
+
+  @override
+  Future<Stand?> findStandByTitle(String motif) async {
+    return _queryAdapter.query('SELECT * FROM Stand WHERE title LIKE ?1',
+        mapper: (Map<String, Object?> row) => Stand(
+            row['id'] as int,
+            row['title'] as String,
+            row['idPavion'] as int,
+            row['idExposant'] as int),
+        arguments: [motif]);
   }
 
   @override
