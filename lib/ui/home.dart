@@ -94,7 +94,7 @@ class HomePageState extends State<HomePage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => FlagPage()),
+                    builder: (context) => FlagPage(Pavion(2, "", 2, 1))),
               );
             },
             child: Ink(

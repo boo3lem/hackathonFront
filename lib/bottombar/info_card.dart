@@ -119,7 +119,7 @@ class _InfoCardState extends State<InfoCard>
                                   height: screenWidth / 25,
                                   width: screenWidth / 20,
                                   decoration: BoxDecoration(
-                                    color: Color(0xFFCF7317),
+                                    color: Colors.black.withOpacity(0.6),
                                     borderRadius: BorderRadius.only(
                                       topLeft: Radius.circular(10),
                                       bottomRight: Radius.circular(10),
