@@ -3,8 +3,6 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'data/database.dart';
-import 'data/models/pavion.dart';
 import 'package:hackathon/sidebar/sidebar_layout.dart';
 
 void main() {
@@ -28,10 +26,10 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.white,
         primaryColor: Colors.white,
       ),
+
       home: SideBarLayout(),
     );
   }
-
 
 }
 

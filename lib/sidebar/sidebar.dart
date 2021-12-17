@@ -81,11 +81,12 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin {
                   child: GestureDetector(
                     onTap: () {
                       onIconsPressed();
+                      print(screenWidth);
                     },
                     child: ClipPath(
                       clipper: CustomMenuClipper(),
                       child: Container(
-                        height: 80,
+                        height: screenWidth/10,
                         width: screenWidth / 20,
                         color: Color(0xFF262AAA),
                         alignment: Alignment.centerLeft,
@@ -100,7 +101,7 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin {
                   ),
                 ),
                 Container(
-                  height: 35,
+                  height: screenWidth / 20,
                   width: screenWidth / 5 * 2.95,
                 )
               ],
@@ -113,5 +114,3 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin {
     );
   }
 }
-
- 
