@@ -308,7 +308,7 @@ class FlagPageState extends State<FlagPage> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Icon(Icons.arrow_forward),
+                        Image.asset('assets/enter.png'),
                         Text("Entrer"),
                       ],
                     ),
@@ -469,8 +469,8 @@ class FlagPageState extends State<FlagPage> {
                 InkWell(
                   onTap: () {},
                   child: Ink(
-                    height: hp(15),
-                    width: hp(45),
+                    height: scale(15),
+                    width: scale(45),
                     decoration: BoxDecoration(
                       border: Border.all(width: 3, color: Colors.blue[300]!),
                       borderRadius: BorderRadius.only(
@@ -504,8 +504,8 @@ class FlagPageState extends State<FlagPage> {
                 InkWell(
                   onTap: () {},
                   child: Ink(
-                    height: hp(15),
-                    width: hp(45),
+                    height: scale(15),
+                    width: scale(45),
                     decoration: BoxDecoration(
                       border: Border.all(width: 3, color: Colors.blue[300]!),
                       borderRadius: BorderRadius.only(
@@ -539,8 +539,8 @@ class FlagPageState extends State<FlagPage> {
                 InkWell(
                   onTap: () {},
                   child: Ink(
-                    height: hp(15),
-                    width: hp(45),
+                    height: scale(15),
+                    width: scale(45),
                     decoration: BoxDecoration(
                       border: Border.all(width: 3, color: Colors.blue[300]!),
                       borderRadius: BorderRadius.only(
@@ -581,8 +581,8 @@ class FlagPageState extends State<FlagPage> {
                 InkWell(
                   onTap: () {},
                   child: Ink(
-                    height: hp(15),
-                    width: hp(15),
+                    height: scale(15),
+                    width: scale(15),
                     decoration: BoxDecoration(
                       border: Border.all(width: 3, color: Colors.blue[300]!),
                       borderRadius: BorderRadius.only(
@@ -614,7 +614,7 @@ class FlagPageState extends State<FlagPage> {
                   width: 3,
                 ),
                 Container(
-                  width: hp(105),
+                  width: scale(105),
                 ),
                 SizedBox(
                   width: 3,
@@ -622,8 +622,8 @@ class FlagPageState extends State<FlagPage> {
                 InkWell(
                   onTap: () {},
                   child: Ink(
-                    height: hp(15),
-                    width: hp(15),
+                    height: scale(15),
+                    width: scale(15),
 
                     decoration: BoxDecoration(
                       border: Border.all(width: 3, color: Colors.blue[300]!),
@@ -664,8 +664,8 @@ class FlagPageState extends State<FlagPage> {
               InkWell(
                 onTap: () {},
                 child: Ink(
-                  height: hp(15),
-                  width: hp(15),
+                  height: scale(15),
+                  width: scale(15),
                   decoration: BoxDecoration(
                     border: Border.all(width: 3, color: Colors.blue[300]!),
                     borderRadius: BorderRadius.only(
@@ -694,7 +694,7 @@ class FlagPageState extends State<FlagPage> {
                 ),
               ),
               Container(
-                width: hp(15),
+                width: scale(15),
               ),
               SizedBox(
                 width: 1.5,
@@ -702,8 +702,8 @@ class FlagPageState extends State<FlagPage> {
               InkWell(
                 onTap: () {},
                 child: Ink(
-                  height: hp(15),
-                  width: hp(30),
+                  height: scale(15),
+                  width: scale(30),
                   decoration: BoxDecoration(
                     border: Border.all(width: 3, color: Colors.blue[300]!),
                     borderRadius: BorderRadius.only(
@@ -737,8 +737,8 @@ class FlagPageState extends State<FlagPage> {
               InkWell(
                 onTap: () {},
                 child: Ink(
-                  height: hp(15),
-                  width: hp(45),
+                  height: scale(15),
+                  width: scale(45),
                   decoration: BoxDecoration(
                     border: Border.all(width: 3, color: Colors.blue[300]!),
                     borderRadius: BorderRadius.only(
@@ -770,13 +770,13 @@ class FlagPageState extends State<FlagPage> {
                 width: 1.5,
               ),
               Container(
-                width: hp(15),
+                width: scale(15),
               ),
               InkWell(
                 onTap: () {},
                 child: Ink(
-                  height: hp(15),
-                  width: hp(15),
+                  height: scale(15),
+                  width: scale(15),
                   decoration: BoxDecoration(
                     border: Border.all(width: 3, color: Colors.blue[300]!),
                     borderRadius: BorderRadius.only(
@@ -813,14 +813,14 @@ class FlagPageState extends State<FlagPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                  width: hp(120),
+                  width: scale(120),
                   child: Padding(
                     padding: EdgeInsets.only(left: scale(5)),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Icon(Icons.arrow_forward),
+                        Image.asset('assets/enter.png', height: hp(5)),
                         Text("Entrer"),
                       ],
                     ),
@@ -831,8 +831,8 @@ class FlagPageState extends State<FlagPage> {
               InkWell(
                 onTap: () {},
                 child: Ink(
-                  height: hp(15),
-                  width: hp(15),
+                  height: scale(15),
+                  width: scale(15),
                   decoration: BoxDecoration(
                     border: Border.all(width: 3, color: Colors.blue[300]!),
                     borderRadius: BorderRadius.only(
@@ -871,8 +871,8 @@ class FlagPageState extends State<FlagPage> {
               InkWell(
                 onTap: () {},
                 child: Ink(
-                  height: hp(15),
-                  width: hp(30),
+                  height: scale(15),
+                  width: scale(30),
                   decoration: BoxDecoration(
                     border: Border.all(width: 3, color: Colors.blue[300]!),
                     borderRadius: BorderRadius.only(
@@ -906,8 +906,8 @@ class FlagPageState extends State<FlagPage> {
               InkWell(
                 onTap: () {},
                 child: Ink(
-                  height: hp(15),
-                  width: hp(45),
+                  height: scale(15),
+                  width: scale(45),
                   decoration: BoxDecoration(
                     border: Border.all(width: 3, color: Colors.blue[300]!),
                     borderRadius: BorderRadius.only(
@@ -941,8 +941,8 @@ class FlagPageState extends State<FlagPage> {
               InkWell(
                 onTap: () {},
                 child: Ink(
-                  height: hp(15),
-                  width: hp(15),
+                  height: scale(15),
+                  width: scale(15),
                   decoration: BoxDecoration(
                     border: Border.all(width: 3, color: Colors.blue[300]!),
                     borderRadius: BorderRadius.only(
@@ -976,8 +976,8 @@ class FlagPageState extends State<FlagPage> {
               InkWell(
                 onTap: () {},
                 child: Ink(
-                  height: hp(15),
-                  width: hp(45),
+                  height: scale(15),
+                  width: scale(45),
                   decoration: BoxDecoration(
                     border: Border.all(width: 3, color: Colors.blue[300]!),
                     borderRadius: BorderRadius.only(
