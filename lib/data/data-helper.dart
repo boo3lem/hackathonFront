@@ -38,7 +38,7 @@ class DataHelper {
     expo.add(
       Exposant(
           5,
-          "Entreprise metro d’alger",
+          "metro d’Alger",
           "Le métro d'Alger est un réseau ferroviaire de transport urbain de type métro desservant la ville d'Alger depuis 2011.\nLe premier projet de métro d'Alger date de 1928 mais il ne verra pas le jour. L'initiative du métro actuel est lancée à la fin des années 1970 afin de parer à l'explosion démographique de la ville d'Alger et au besoin de transport collectif qui en résulte. Lancée dans les années 1980, sa construction est ralentie du fait de difficultés financières et de l'insécurité dans les années 1990. Le projet est relancé en 20032.\nLa première section de la ligne 1 Haï El Badr - Tafourah-Grande Poste, d'une longueur de 9,5 km et comportant dix stations a été inaugurée le 31 octobre 2011. Deux nouvelles extensions ont été mises en service, le 4 juillet 2015 une section de 4 km vers El Harrach-Centre et le 9 avril 2018 deux sections, une de 1,7 km vers la Place des Martyrs et une autre de 3,6 km vers Ain Naâdja.\nDeux autres extensions d'une longueur totale de 15 km sont en cours de construction en direction de l'Aéroport et de Baraki.",
           "www.metroalger-dz.com",
           "assets/metro.png"),
@@ -57,140 +57,63 @@ class DataHelper {
           "Sonelgaz",
           "Sonelgaz (acronyme de Société nationale de l'électricité et du gaz) est un groupe industriel énergétique algérien, spécialisé dans la production, la distribution et la commercialisation d'électricité et de l'achat, le transport, la distribution et la commercialisation de gaz naturel. Son siège social est situé à Alger.",
           "sonalgaz.dz",
-          "assets/sonalgaz.png"),
-    );expo.add(
+          "assets/sonelgaz.png"),
+    );
+    expo.add(
       Exposant(
           8,
           "Naftal",
           "Naftal est une entreprise pétrolière algérienne, spécialisée dans la distribution des produits pétroliers.\nNaftal est aussi spécialisée dans la conception, l'élaboration et la distribution de lubrifiants pour moteurs (deux-roues, automobiles et autres véhicules) ainsi que pour l'industrie.",
           "www.naftal.dz",
           "assets/naftal.png"),
-    );expo.add(
+    );
+    expo.add(
       Exposant(
           9,
           "Cosider",
           "Cosider est une entreprise algérienne du secteur du bâtiment et travaux publics. Elle construit des bâtiments, des grands ouvrages et des infrastructures de transport.",
           "cosider-groupe.dz",
           "assets/cosider.png"),
-    );expo.add(
+    );
+    expo.add(
       Exposant(
           10,
-          "Entreprise de transport urbain et suburbain d'Alger",
+          "ETUSA",
           "L'Établissement public de transport urbain et suburbain d'Alger (connue sous l'acronyme ETUSA) est une entreprise publique, qui assure le service de transports en commun de surface dans la ville d'Alger et son agglomération.",
-          "cevital.dz",
+          "http://www.aotu-alger.dz/",
           "assets/etusa.png"),
-    );expo.add(
+    );
+    expo.add(
       Exposant(
           11,
           "Algérie Télécom",
           "Algérie Télécom est une entreprise publique algérienne de télécommunications créée le 1er janvier 20031, filiale du groupe Télécom Algérie.",
-          "cevital.dz",
-          "assets/cevital.png"),
-    );expo.add(
-      Exposant(
-          4,
-          "Groupe Cevital",
-          "",
-          "cevital.dz",
-          "assets/cevital.png"),
-    );expo.add(
-      Exposant(
-          4,
-          "Groupe Cevital",
-          "",
-          "cevital.dz",
-          "assets/cevital.png"),
-    );expo.add(
-      Exposant(
-          4,
-          "Groupe Cevital",
-          "",
-          "cevital.dz",
-          "assets/cevital.png"),
-    );expo.add(
-      Exposant(
-          4,
-          "Groupe Cevital",
-          "",
-          "cevital.dz",
-          "assets/cevital.png"),
-    );expo.add(
-      Exposant(
-          4,
-          "Groupe Cevital",
-          "",
-          "cevital.dz",
-          "assets/cevital.png"),
-    );expo.add(
-      Exposant(
-          4,
-          "Groupe Cevital",
-          "",
-          "cevital.dz",
-          "assets/cevital.png"),
-    );expo.add(
-      Exposant(
-          4,
-          "Groupe Cevital",
-          "",
-          "cevital.dz",
-          "assets/cevital.png"),
+          "https://www.algerietelecom.dz/",
+          "assets/algereie-telecom.png"),
     );
     expo.add(
       Exposant(
-          4,
-          "Groupe Cevital",
-          "Le Groupe Cevital est un conglomérat algérien de l'industrie agroalimentaire, la grande distribution, l'industrie et les services. Créé par l'entrepreneur Issad Rebrab en 1998, Cevital est le premier groupe privé algérien, présent également à l'international et la troisième entreprise algérienne par le chiffre d'affaires. Il emploie 18 000 salariés. Le groupe Cevital est le leader du secteur agroalimentaire en Afrique.",
-          "cevital.dz",
-          "assets/cevital.png"),
+          12,
+          "Algérie Poste",
+          "Algérie Poste est une entreprise algérienne. Elle est un établissement public à caractère industriel et commercial. Elle conduit d'une part une activité d'opérateur de courrier et d'autre part, une activité d'établissement financier.",
+          "www.poste.dz",
+          "assets/algerie-poste.png"),
     );
     expo.add(
       Exposant(
-          4,
-          "Groupe Cevital",
-          "Le Groupe Cevital est un conglomérat algérien de l'industrie agroalimentaire, la grande distribution, l'industrie et les services. Créé par l'entrepreneur Issad Rebrab en 1998, Cevital est le premier groupe privé algérien, présent également à l'international et la troisième entreprise algérienne par le chiffre d'affaires. Il emploie 18 000 salariés. Le groupe Cevital est le leader du secteur agroalimentaire en Afrique.",
-          "cevital.dz",
-          "assets/cevital.png"),
+          13,
+          "Biopharm",
+          "Biopharm est un groupe pharmaceutique algérien créé en 1991 par Abdelmadjid Kerrar. Le groupe détient 13% du marché algérien du médicament et exporte ses produits vers la Mauritanie, le Mali, le Niger.",
+          "http://www.biopharmdz.com",
+          "assets/biofarm.png"),
     );
     expo.add(
       Exposant(
-          4,
-          "Groupe Cevital",
-          "Le Groupe Cevital est un conglomérat algérien de l'industrie agroalimentaire, la grande distribution, l'industrie et les services. Créé par l'entrepreneur Issad Rebrab en 1998, Cevital est le premier groupe privé algérien, présent également à l'international et la troisième entreprise algérienne par le chiffre d'affaires. Il emploie 18 000 salariés. Le groupe Cevital est le leader du secteur agroalimentaire en Afrique.",
-          "cevital.dz",
-          "assets/cevital.png"),
-    );
-    expo.add(
-      Exposant(
-          4,
-          "Groupe Cevital",
-          "Le Groupe Cevital est un conglomérat algérien de l'industrie agroalimentaire, la grande distribution, l'industrie et les services. Créé par l'entrepreneur Issad Rebrab en 1998, Cevital est le premier groupe privé algérien, présent également à l'international et la troisième entreprise algérienne par le chiffre d'affaires. Il emploie 18 000 salariés. Le groupe Cevital est le leader du secteur agroalimentaire en Afrique.",
-          "cevital.dz",
-          "assets/cevital.png"),
-    );
-    expo.add(
-      Exposant(
-          4,
-          "Groupe Cevital",
-          "Le Groupe Cevital est un conglomérat algérien de l'industrie agroalimentaire, la grande distribution, l'industrie et les services. Créé par l'entrepreneur Issad Rebrab en 1998, Cevital est le premier groupe privé algérien, présent également à l'international et la troisième entreprise algérienne par le chiffre d'affaires. Il emploie 18 000 salariés. Le groupe Cevital est le leader du secteur agroalimentaire en Afrique.",
-          "cevital.dz",
-          "assets/cevital.png"),
-    );
-    expo.add(
-      Exposant(
-          4,
-          "Groupe Cevital",
-          "Le Groupe Cevital est un conglomérat algérien de l'industrie agroalimentaire, la grande distribution, l'industrie et les services. Créé par l'entrepreneur Issad Rebrab en 1998, Cevital est le premier groupe privé algérien, présent également à l'international et la troisième entreprise algérienne par le chiffre d'affaires. Il emploie 18 000 salariés. Le groupe Cevital est le leader du secteur agroalimentaire en Afrique.",
-          "cevital.dz",
-          "assets/cevital.png"),
-    );
-    expo.add(
-      Exposant(
-          4,
-          "Groupe Cevital",
-          "Le Groupe Cevital est un conglomérat algérien de l'industrie agroalimentaire, la grande distribution, l'industrie et les services. Créé par l'entrepreneur Issad Rebrab en 1998, Cevital est le premier groupe privé algérien, présent également à l'international et la troisième entreprise algérienne par le chiffre d'affaires. Il emploie 18 000 salariés. Le groupe Cevital est le leader du secteur agroalimentaire en Afrique.",
-          "cevital.dz",
-          "assets/cevital.png"),
+          14,
+          "Groupe Amor Benamor",
+          "Amor Benamor est un groupe agroalimentaire algérien spécialisé dans la fabrication de pâtes alimentaires et couscous. Créé en 1984, le groupe est actuellement leader de la production de pâtes alimentaires et de couscous en Algérie.",
+          "https://amorbenamor-group.com/",
+          "assets/amr-bmr.png"),
     );
     return expo;
   }
