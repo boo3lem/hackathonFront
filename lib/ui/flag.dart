@@ -23,19 +23,227 @@ class FlagPageState extends State<FlagPage> {
   }
 
   _buildBody() {
-    return Container(
-      child: Row(
-        children: [
-          Column(
-            children: [
-              Container(
-                height: scale(10),
-                width: scale(10),
-                color: Colors.blue,
-              )
-            ],
-          )
-        ],
+    return Center(
+      child: Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                InkWell(
+                  onTap: () {},
+                  child: Ink(
+                    height: scale(15),
+                    width: scale(45),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.green[300]!),
+                      color: Colors.green[100]!,
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        FlutterLogo(),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Text(
+                          'Spintechs',
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                InkWell(
+                  onTap: () {},
+                  child: Ink(
+                    height: scale(15),
+                    width: scale(30),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.green[300]!),
+                      color: Colors.green[100]!,
+                    ),
+                  ),
+                ),
+                InkWell(
+                  onTap: () {},
+                  child: Ink(
+                    height: scale(15),
+                    width: scale(45),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.green[300]!),
+                      color: Colors.green[100]!,
+                    ),
+                  ),
+                ),
+                InkWell(
+                  onTap: () {},
+                  child: Ink(
+                    height: scale(15),
+                    width: scale(15),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.green[300]!),
+                      color: Colors.green[100]!,
+                    ),
+                  ),
+                )
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                InkWell(
+                  onTap: () {},
+                  child: Ink(
+                    height: scale(15),
+                    width: scale(15),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.green[300]!),
+                      color: Colors.green[100]!,
+                    ),
+                  ),
+                ),
+                Container(
+                  width: scale(105),
+                ),
+                InkWell(
+                  onTap: () {},
+                  child: Ink(
+                    height: scale(15),
+                    width: scale(15),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.green[300]!),
+                      color: Colors.green[100]!,
+                    ),
+                  ),
+                )
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                InkWell(
+                  onTap: () {},
+                  child: Ink(
+                    height: scale(15),
+                    width: scale(15),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.green[300]!),
+                      color: Colors.green[100]!,
+                    ),
+                  ),
+                ),
+                Container(
+                  width: scale(15),
+                ),
+                InkWell(
+                  onTap: () {},
+                  child: Ink(
+                    height: scale(15),
+                    width: scale(30),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.green[300]!),
+                      color: Colors.green[100]!,
+                    ),
+                  ),
+                ),
+                InkWell(
+                  onTap: () {},
+                  child: Ink(
+                    height: scale(15),
+                    width: scale(45),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.green[300]!),
+                      color: Colors.green[100]!,
+                    ),
+                  ),
+                ),
+                Container(
+                  width: scale(15),
+                ),
+                InkWell(
+                  onTap: () {},
+                  child: Ink(
+                    height: scale(15),
+                    width: scale(15),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.green[300]!),
+                      color: Colors.green[100]!,
+                    ),
+                  ),
+                )
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: scale(120),
+                ),
+                InkWell(
+                  onTap: () {},
+                  child: Ink(
+                    height: scale(15),
+                    width: scale(15),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.green[300]!),
+                      color: Colors.green[100]!,
+                    ),
+                  ),
+                )
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                InkWell(
+                  onTap: () {},
+                  child: Ink(
+                    height: scale(15),
+                    width: scale(15),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.green[300]!),
+                      color: Colors.green[100]!,
+                    ),
+                  ),
+                ),
+                InkWell(
+                  onTap: () {},
+                  child: Ink(
+                    height: scale(15),
+                    width: scale(60),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.green[300]!),
+                      color: Colors.green[100]!,
+                    ),
+                  ),
+                ),
+                InkWell(
+                  onTap: () {},
+                  child: Ink(
+                    height: scale(15),
+                    width: scale(45),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.green[300]!),
+                      color: Colors.green[100]!,
+                    ),
+                  ),
+                ),
+                InkWell(
+                  onTap: () {},
+                  child: Ink(
+                    height: scale(15),
+                    width: scale(15),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.green[300]!),
+                      color: Colors.green[100]!,
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
