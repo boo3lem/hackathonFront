@@ -22,4 +22,13 @@ abstract class AppDatabase extends FloorDatabase {
   TerminalDao get terminalDao;
   ExposantDao get exposantDao;
   StandDao get standDao;
+
+  static AppDatabase? _instance;
+
+  static Future<AppDatabase?> getInstance() async {
+    if (_instance == null) {
+      _instance = await $FloorAppDatabase.databaseBuilder('app_database.db').build();
+    }
+    return _instance;
+  }
 }

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_map/flutter_map.dart';
+import 'package:hackathon/data/database.dart';
+import 'package:hackathon/data/models/pavion.dart';
+import 'package:hackathon/data/repositories/pavion_dao.dart';
 import 'package:hackathon/ui/flag.dart';
 import "package:latlong2/latlong.dart" as latLng;
 
@@ -10,9 +13,12 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> {
+  List<Marker> markers = [];
+
   @override
   void initState() {
     // TODO: implement initState
+    _loadMarkers();
     super.initState();
   }
 
@@ -36,18 +42,19 @@ class HomePageState extends State<HomePage> {
         ),
         layers: [
           TileLayerOptions(
-            urlTemplate: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+            urlTemplate:
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
             subdomains: ['a', 'b', 'c'],
           ),
           MarkerLayerOptions(
-            markers: _buildMarkers(),
+            markers: _loadMarkers(),
           ),
         ],
       ),
     );
   }
 
-  _buildMarkers() {
+  _loadMarkers() {
     return [
       Marker(
         width: 40.0,
@@ -86,7 +93,8 @@ class HomePageState extends State<HomePage> {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => FlagPage()),
+                MaterialPageRoute(
+                    builder: (context) => FlagPage(Pavion(1, "", 12, 12))),
               );
             },
             child: Ink(
