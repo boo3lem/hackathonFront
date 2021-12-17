@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hackathon/bottombar/bottombar.dart';
+import 'package:hackathon/bottombar/info_card.dart';
 import 'package:hackathon/sidebar/sidebar.dart';
 import 'package:hackathon/ui/home.dart';
 class SideBarLayout extends StatelessWidget {
@@ -11,8 +12,8 @@ class SideBarLayout extends StatelessWidget {
       body: Stack(
         children: <Widget>[
           HomePage(),
-          SideBar(),
-          BottomBar(),
+          // SideBar(),
+          InfoCard(),
         ],
       ),
     );

@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:hackathon/bottombar/info_card.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -21,6 +22,7 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin {
   late StreamSink<bool> isSidebarOpenedSink;
 
   final _animationDuration = const Duration(milliseconds: 500);
+  final button= false;
   @override
   void initState() {
     // TODO: implement initState
@@ -81,12 +83,13 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin {
                   child: GestureDetector(
                     onTap: () {
                       onIconsPressed();
+
                       print(screenWidth);
                     },
                     child: ClipPath(
                       clipper: CustomMenuClipper(),
                       child: Container(
-                        height: screenWidth/10,
+                        height: screenWidth / 10,
                         width: screenWidth / 20,
                         color: Color(0xFF262AAA),
                         alignment: Alignment.centerLeft,
@@ -103,7 +106,8 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin {
                 Container(
                   height: screenWidth / 20,
                   width: screenWidth / 5 * 2.95,
-                )
+                ),
+                // InfoCard()
               ],
             ),
           );
