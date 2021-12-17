@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hackathon/data/data-helper.dart';
+import 'package:hackathon/data/models/exposant.dart';
 
 class FlagPage extends StatefulWidget {
   @override
@@ -12,8 +14,11 @@ class FlagPageState extends State<FlagPage> {
     super.initState();
   }
 
+  final List<Exposant> exposants = DataHelper.getStands();
+
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -43,25 +48,14 @@ class FlagPageState extends State<FlagPage> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        FlutterLogo(),
+                        Image.asset(exposants[0].logo, height: scale(5),),
                         SizedBox(
                           width: 5,
                         ),
                         Text(
-                          'Spintechs',
+                          exposants[0].title,
                         )
                       ],
-                    ),
-                  ),
-                ),
-                InkWell(
-                  onTap: () {},
-                  child: Ink(
-                    height: scale(15),
-                    width: scale(30),
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.green[300]!),
-                      color: Colors.green[100]!,
                     ),
                   ),
                 ),
@@ -80,13 +74,13 @@ class FlagPageState extends State<FlagPage> {
                   onTap: () {},
                   child: Ink(
                     height: scale(15),
-                    width: scale(15),
+                    width: scale(45),
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.green[300]!),
                       color: Colors.green[100]!,
                     ),
                   ),
-                )
+                ),
               ],
             ),
             Row(
@@ -179,6 +173,17 @@ class FlagPageState extends State<FlagPage> {
               children: [
                 Container(
                   width: scale(120),
+                  child: Padding(
+                    padding: EdgeInsets.only(left : scale(5)),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Icon(Icons.arrow_forward),
+                        Text("Entrer"),
+                      ],
+                    ),
+                  )
                 ),
                 InkWell(
                   onTap: () {},
@@ -222,7 +227,7 @@ class FlagPageState extends State<FlagPage> {
                   onTap: () {},
                   child: Ink(
                     height: scale(15),
-                    width: scale(45),
+                    width: scale(15),
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.green[300]!),
                       color: Colors.green[100]!,
@@ -233,7 +238,7 @@ class FlagPageState extends State<FlagPage> {
                   onTap: () {},
                   child: Ink(
                     height: scale(15),
-                    width: scale(15),
+                    width: scale(45),
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.green[300]!),
                       color: Colors.green[100]!,
