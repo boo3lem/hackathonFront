@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hackathon/ui/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,6 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      initialRoute: '/home',
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -25,6 +27,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      routes: {
+        '/home' : (context) => HomePage(),
+      },
     );
   }
 }
