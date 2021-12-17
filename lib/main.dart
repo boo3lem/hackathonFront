@@ -23,8 +23,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        scaffoldBackgroundColor: Colors.white,
-        primaryColor: Colors.white,
+        scaffoldBackgroundColor: Color(0xFF09C699),
+        primaryColor: Color(0xFF1773CF),
       ),
 
       home: SideBarLayout(),

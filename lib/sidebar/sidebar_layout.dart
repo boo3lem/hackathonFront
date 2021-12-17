@@ -13,7 +13,7 @@ class SideBarLayout extends StatelessWidget {
         children: <Widget>[
           HomePage(),
           // SideBar(),
-          InfoCard(),
+          // InfoCard(),
         ],
       ),
     );
