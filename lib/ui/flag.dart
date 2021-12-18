@@ -1060,6 +1060,23 @@ class FlagPageState extends State<FlagPage> {
           ],
         ),
       ),
+      GestureDetector(
+        onTap: (){
+          Navigator.of(context).pop();
+        },
+        child: Align(
+          alignment: Alignment.topLeft,
+          child: Container(
+            child: Icon(Icons.arrow_back_ios),
+            height: MediaQuery.of(context).size.height/12,
+            width: MediaQuery.of(context).size.width/25,
+            decoration: BoxDecoration(
+              color:Color(0xFFBBDEFB),
+              borderRadius: BorderRadius.only(bottomRight: Radius.circular(20))
+            ),
+          ),
+        ),
+      ),
       card,]
     );
 
