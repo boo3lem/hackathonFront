@@ -89,7 +89,7 @@ class DataHelper {
           "Algérie Télécom",
           "Algérie Télécom est une entreprise publique algérienne de télécommunications créée le 1er janvier 20031, filiale du groupe Télécom Algérie.",
           "https://www.algerietelecom.dz/",
-          "assets/algereie-telecom.png"),
+          "assets/algerie-telecom.png"),
     );
     expo.add(
       Exposant(

@@ -42,8 +42,7 @@ class HomePageState extends State<HomePage> {
         ),
         layers: [
           TileLayerOptions(
-            urlTemplate:
-                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+            urlTemplate: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
             subdomains: ['a', 'b', 'c'],
           ),
           MarkerLayerOptions(
@@ -57,165 +56,99 @@ class HomePageState extends State<HomePage> {
   _loadMarkers() {
     return [
       Marker(
-        width: 40.0,
-        height: 40.0,
+        width: 50.0,
+        height: 50.0,
+        point: latLng.LatLng(36.735500001051355, 3.153200021802757),
+        builder: (ctx) => InkWell(
+          borderRadius: BorderRadius.circular(5),
+          onTap: () {},
+          child: Image.asset('assets/location-pin.png'),
+        ),
+      ),
+      Marker(
+        width: 50.0,
+        height: 50.0,
+        point: latLng.LatLng(36.734950681051355, 3.153980621802757),
+        builder: (ctx) => InkWell(
+          borderRadius: BorderRadius.circular(5),
+          onTap: () {},
+          child: Icon(Icons.my_location, color: Colors.red[400]!,size: 30,),
+        ),
+      ),
+      Marker(
+        width: 50.0,
+        height: 50.0,
         point: latLng.LatLng(36.735270681051355, 3.154195621802757),
-        builder: (ctx) => Material(
+        builder: (ctx) => InkWell(
           borderRadius: BorderRadius.circular(5),
-          child: InkWell(
-            borderRadius: BorderRadius.circular(5),
-            child: Ink(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5),
-                color: Colors.red,
-              ),
-              child: Center(
-                child: Text(
-                  "P1",
-                  style: TextStyle(
-                      color: Colors.white,
-                      letterSpacing: 1,
-                      fontWeight: FontWeight.w800),
-                ),
-              ),
-            ),
-          ),
+          onTap: () {
+            print('hello world');
+          },
+          child: Image.asset('assets/location.png'),
         ),
       ),
       Marker(
-        width: 40.0,
-        height: 40.0,
+        width: 50.0,
+        height: 50.0,
         point: latLng.LatLng(36.735740681051355, 3.152705621802757),
-        builder: (ctx) => Material(
+        builder: (ctx) => InkWell(
           borderRadius: BorderRadius.circular(5),
-          child: InkWell(
-            borderRadius: BorderRadius.circular(5),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => FlagPage(Pavion(2, "", 2, 1))),
-              );
-            },
-            child: Ink(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5),
-                color: Colors.red,
-              ),
-              child: Center(
-                child: Text(
-                  "P2",
-                  style: TextStyle(
-                      color: Colors.white,
-                      letterSpacing: 1,
-                      fontWeight: FontWeight.w800),
-                ),
-              ),
-            ),
-          ),
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => FlagPage(Pavion(2, "", 2, 1))),
+            );
+          },
+          child: Image.asset('assets/location.png'),
         ),
       ),
       Marker(
-        width: 40.0,
-        height: 40.0,
+        width: 50.0,
+        height: 50.0,
         point: latLng.LatLng(36.734720681051355, 3.154055621802757),
-        builder: (ctx) => Material(
+        builder: (ctx) => InkWell(
           borderRadius: BorderRadius.circular(5),
-          child: InkWell(
-            borderRadius: BorderRadius.circular(5),
-            child: Ink(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5),
-                color: Colors.red,
-              ),
-              child: Center(
-                child: Text(
-                  "P3",
-                  style: TextStyle(
-                      color: Colors.white,
-                      letterSpacing: 1,
-                      fontWeight: FontWeight.w800),
-                ),
-              ),
-            ),
-          ),
+          onTap: () {
+            print('hello world');
+          },
+          child: Image.asset('assets/location.png'),
         ),
       ),
       Marker(
-        width: 40.0,
-        height: 40.0,
+        width: 50.0,
+        height: 50.0,
         point: latLng.LatLng(36.734850681051355, 3.155555621802757),
-        builder: (ctx) => Material(
+        builder: (ctx) => InkWell(
           borderRadius: BorderRadius.circular(5),
-          child: InkWell(
-            borderRadius: BorderRadius.circular(5),
-            child: Ink(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5),
-                color: Colors.red,
-              ),
-              child: Center(
-                  child: Text(
-                "P4",
-                style: TextStyle(
-                    color: Colors.white,
-                    letterSpacing: 1,
-                    fontWeight: FontWeight.w800),
-              )),
-            ),
-          ),
+          onTap: () {
+            print('hello world');
+          },
+          child: Image.asset('assets/location.png'),
         ),
       ),
       Marker(
-        width: 40.0,
-        height: 40.0,
+        width: 50.0,
+        height: 50.0,
         point: latLng.LatLng(36.735930681051355, 3.155105621802757),
-        builder: (ctx) => Material(
+        builder: (ctx) => InkWell(
           borderRadius: BorderRadius.circular(5),
-          child: InkWell(
-            borderRadius: BorderRadius.circular(5),
-            child: Ink(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5),
-                color: Colors.red,
-              ),
-              child: Center(
-                child: Text(
-                  "P5",
-                  style: TextStyle(
-                      color: Colors.white,
-                      letterSpacing: 1,
-                      fontWeight: FontWeight.w800),
-                ),
-              ),
-            ),
-          ),
+          onTap: () {
+            print('hello world');
+          },
+          child: Image.asset('assets/location.png'),
         ),
       ),
       Marker(
-        width: 40.0,
-        height: 40.0,
+        width: 50.0,
+        height: 50.0,
         point: latLng.LatLng(36.735380681051355, 3.155405621802757),
-        builder: (ctx) => Material(
+        builder: (ctx) => InkWell(
           borderRadius: BorderRadius.circular(5),
-          child: InkWell(
-            borderRadius: BorderRadius.circular(5),
-            child: Ink(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5),
-                color: Colors.red,
-              ),
-              child: Center(
-                child: Text(
-                  "P6",
-                  style: TextStyle(
-                      color: Colors.white,
-                      letterSpacing: 1,
-                      fontWeight: FontWeight.w800),
-                ),
-              ),
-            ),
-          ),
+          onTap: () {
+            print('hello world');
+          },
+          child: Image.asset('assets/location.png'),
         ),
       ),
     ];
