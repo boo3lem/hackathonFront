@@ -985,7 +985,9 @@ class FlagPageState extends State<FlagPage> {
                   width: 3,
                 ),
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    valueNotifier.value = exposants[11];
+                  },
                   child: Ink(
                     height: scale(15),
                     width: scale(45),
@@ -1021,7 +1023,7 @@ class FlagPageState extends State<FlagPage> {
                 ),
                 InkWell(
                   onTap: () {
-                    valueNotifier.value = exposants[11];
+                    valueNotifier.value = exposants[12];
 
                   },
                   child: Ink(
@@ -1059,7 +1061,7 @@ class FlagPageState extends State<FlagPage> {
                 ),
                 InkWell(
                   onTap: () {
-                    valueNotifier.value = exposants[12];
+                    valueNotifier.value = exposants[13];
 
                   },
                   child: Ink(
@@ -1108,7 +1110,7 @@ class FlagPageState extends State<FlagPage> {
             height: MediaQuery.of(context).size.height/12,
             width: MediaQuery.of(context).size.width/25,
             decoration: BoxDecoration(
-              color:Color(0xFFBBDEFB),
+              color: Colors.black.withOpacity(0.6),
               borderRadius: BorderRadius.only(bottomRight: Radius.circular(20))
             ),
           ),
