@@ -69,8 +69,11 @@ class FlagPageState extends State<FlagPage> {
                         SizedBox(
                           width: 5,
                         ),
-                        Text(
-                          exposants[0].title,
+                        FittedBox(
+                          fit: BoxFit.fitWidth,
+                          child: Text(
+                            exposants[0].title,
+                          ),
                         )
                       ],
                     ),
@@ -95,8 +98,11 @@ class FlagPageState extends State<FlagPage> {
                         SizedBox(
                           width: 5,
                         ),
-                        Text(
-                          exposants[1].title,
+                        FittedBox(
+                          fit: BoxFit.fitWidth,
+                          child: Text(
+                            exposants[1].title,
+                          ),
                         )
                       ],
                     ),
@@ -121,8 +127,11 @@ class FlagPageState extends State<FlagPage> {
                         SizedBox(
                           width: 5,
                         ),
-                        Text(
-                          exposants[2].title,
+                        FittedBox(
+                          fit: BoxFit.fitWidth,
+                          child: Text(
+                            exposants[2].title,
+                          ),
                         )
                       ],
                     ),
@@ -152,8 +161,11 @@ class FlagPageState extends State<FlagPage> {
                         SizedBox(
                           width: 5,
                         ),
-                        Text(
-                          exposants[3].title,
+                        FittedBox(
+                          fit: BoxFit.fitWidth,
+                          child: Text(
+                            exposants[3].title,
+                          ),
                         )
                       ],
                     ),
@@ -181,8 +193,11 @@ class FlagPageState extends State<FlagPage> {
                         SizedBox(
                           width: 5,
                         ),
-                        Text(
-                          exposants[4].title,
+                        FittedBox(
+                          fit: BoxFit.fitWidth,
+                          child: Text(
+                            exposants[4].title,
+                          ),
                         )
                       ],
                     ),
@@ -212,8 +227,11 @@ class FlagPageState extends State<FlagPage> {
                         SizedBox(
                           width: 5,
                         ),
-                        Text(
-                          exposants[5].title,
+                        FittedBox(
+                          fit: BoxFit.fitWidth,
+                          child: Text(
+                            exposants[5].title,
+                          ),
                         )
                       ],
                     ),
@@ -241,8 +259,11 @@ class FlagPageState extends State<FlagPage> {
                         SizedBox(
                           width: 5,
                         ),
-                        Text(
-                          exposants[6].title,
+                        FittedBox(
+                          fit: BoxFit.fitWidth,
+                          child: Text(
+                            exposants[6].title,
+                          ),
                         )
                       ],
                     ),
@@ -267,8 +288,11 @@ class FlagPageState extends State<FlagPage> {
                         SizedBox(
                           width: 5,
                         ),
-                        Text(
-                          exposants[7].title,
+                        FittedBox(
+                          fit: BoxFit.fitWidth,
+                          child: Text(
+                            exposants[7].title,
+                          ),
                         )
                       ],
                     ),
@@ -296,8 +320,11 @@ class FlagPageState extends State<FlagPage> {
                         SizedBox(
                           width: 5,
                         ),
-                        Text(
-                          exposants[8].title,
+                        FittedBox(
+                          fit: BoxFit.fitWidth,
+                          child: Text(
+                            exposants[8].title,
+                          ),
                         )
                       ],
                     ),
@@ -340,8 +367,11 @@ class FlagPageState extends State<FlagPage> {
                         SizedBox(
                           width: 5,
                         ),
-                        Text(
-                          exposants[9].title,
+                        FittedBox(
+                          fit: BoxFit.fitWidth,
+                          child: Text(
+                            exposants[9].title,
+                          ),
                         )
                       ],
                     ),
@@ -371,8 +401,11 @@ class FlagPageState extends State<FlagPage> {
                         SizedBox(
                           width: 5,
                         ),
-                        Text(
-                          exposants[10].title,
+                        FittedBox(
+                          fit: BoxFit.fitWidth,
+                          child: Text(
+                            exposants[10].title,
+                          ),
                         )
                       ],
                     ),
@@ -397,8 +430,11 @@ class FlagPageState extends State<FlagPage> {
                         SizedBox(
                           width: 5,
                         ),
-                        Text(
-                          exposants[11].title,
+                        FittedBox(
+                          fit: BoxFit.fitWidth,
+                          child: Text(
+                            exposants[11].title,
+                          ),
                         )
                       ],
                     ),
