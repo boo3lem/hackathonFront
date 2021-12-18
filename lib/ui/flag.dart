@@ -5,9 +5,7 @@ import 'package:hackathon/data/models/exposant.dart';
 import 'package:hackathon/data/models/pavion.dart';
 
 class FlagPage extends StatefulWidget {
-  final Exposant? exposant;
-
-  FlagPage({this.exposant});
+  FlagPage();
 
   @override
   FlagPageState createState() => FlagPageState();
@@ -1104,11 +1102,11 @@ class FlagPageState extends State<FlagPage> {
         child: Align(
           alignment: Alignment.topLeft,
           child: Container(
-            child: Icon(Icons.arrow_back_ios),
+            child: Icon(Icons.arrow_back_ios, color: Colors.white,),
             height: MediaQuery.of(context).size.height/12,
-            width: MediaQuery.of(context).size.width/25,
+            width: MediaQuery.of(context).size.width/17,
             decoration: BoxDecoration(
-              color:Color(0xFFBBDEFB),
+              color:Color(0xFF092E53),
               borderRadius: BorderRadius.only(bottomRight: Radius.circular(20))
             ),
           ),

@@ -108,7 +108,7 @@ class _InfoCardState extends State<InfoCard>
                             color: Color(0xFF1773CF),
                             borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(10),
-                              bottomRight: Radius.circular(20),
+                              bottomLeft: Radius.circular(20),
                             ),
                           ),
                           child: Column(

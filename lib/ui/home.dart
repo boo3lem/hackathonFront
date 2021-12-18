@@ -114,8 +114,12 @@ class HomePageState extends State<HomePage> {
     for (Exposant exposant in searchRes) {
       widgets.add(InkWell(
         onTap: () {
-          Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => FlagPage()));
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => FlagPage(),
+            ),
+          );
         },
         child: Ink(
           height: 50,
@@ -196,7 +200,11 @@ class HomePageState extends State<HomePage> {
         builder: (ctx) => InkWell(
           borderRadius: BorderRadius.circular(5),
           onTap: () {},
-          child: Icon(Icons.my_location, color: Colors.red[400]!,size: 30,),
+          child: Icon(
+            Icons.my_location,
+            color: Colors.red[400]!,
+            size: 30,
+          ),
         ),
       ),
       Marker(
@@ -217,31 +225,20 @@ class HomePageState extends State<HomePage> {
         point: latLng.LatLng(36.735740681051355, 3.152705621802757),
         builder: (ctx) => InkWell(
           borderRadius: BorderRadius.circular(5),
-          child: InkWell(
-            borderRadius: BorderRadius.circular(5),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => FlagPage(),
-                ),
-              );
-            },
-            child: Ink(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5),
-                color: Colors.red,
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => FlagPage(),
               ),
-              child: Center(
-                child: Text(
-                  "P2",
-                  style: TextStyle(
-                      color: Colors.white,
-                      letterSpacing: 1,
-                      fontWeight: FontWeight.w800),
-                ),
-              ),
+            );
+          },
+          child: Ink(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(5),
+              color: Colors.red,
             ),
+            child: Image.asset('assets/location.png'),
           ),
         ),
       ),
