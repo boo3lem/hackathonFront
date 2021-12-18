@@ -5,11 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:hackathon/data/database.dart';
 import 'package:hackathon/data/models/pavion.dart';
 import 'package:hackathon/data/repositories/pavion_dao.dart';
-
-import 'package:hackathon/sidebar/sidebar_layout.dart';
-import 'package:material_floating_search_bar/material_floating_search_bar.dart';
-
-import 'data/models/exposant.dart';
+import 'package:hackathon/pages/start_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -35,11 +31,9 @@ void main() async {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp  extends StatelessWidget  {
   const MyApp({Key? key}) : super(key: key);
 
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([
@@ -51,10 +45,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        scaffoldBackgroundColor: Colors.white,
-        primaryColor: Colors.white,
+        scaffoldBackgroundColor: Color(0xFF09C699),
+        primaryColor: Color(0xFF1773CF),
       ),
-      home: SideBarLayout(),
+      home:StartPage(),
     );
   }
 }

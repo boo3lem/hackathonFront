@@ -2,10 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:flutter/cupertino.dart';
 import 'dart:async';
+import 'package:hackathon/data/models/exposant.dart';
 
 class InfoCard extends StatefulWidget {
-  const InfoCard({Key? key}) : super(key: key);
-
+  const InfoCard({
+    Key? key,
+    required this.expandAction,
+  }) : super(key: key);
+  final ValueNotifier<Exposant> expandAction;
   @override
   _InfoCardState createState() => _InfoCardState();
 }
@@ -22,6 +26,8 @@ class _InfoCardState extends State<InfoCard>
   final button = false;
   @override
   void initState() {
+    widget.expandAction.addListener(listener);
+
     // TODO: implement initState
     super.initState();
     _animationController =
@@ -39,12 +45,24 @@ class _InfoCardState extends State<InfoCard>
     super.dispose();
   }
 
+  bool isOpened = false;
+  void listener() {
+    setState(() {
+      exposant = widget.expandAction.value;
+    });
+    if (!isOpened) {
+      
+      onIconsPressed();
+    }
+
+  }
+
   void onIconsPressed() {
+    isOpened = !isOpened;
     final animationStatus = _animationController.status;
     final isAnimationCompleted = animationStatus == AnimationStatus.completed;
     if (isAnimationCompleted) {
       isSidebarOpenedSink.add(false);
-
       _animationController.reverse();
     } else {
       isSidebarOpenedSink.add(true);
@@ -52,8 +70,10 @@ class _InfoCardState extends State<InfoCard>
     }
   }
 
+  late Exposant exposant;
   @override
   Widget build(BuildContext context) {
+    exposant = widget.expandAction.value;
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
     return StreamBuilder<bool>(
@@ -67,8 +87,8 @@ class _InfoCardState extends State<InfoCard>
             top: 0,
             bottom: 0,
             left: isSideBarOpen
-                ? screenWidth - screenWidth / 5 * 2.95
-                : screenWidth / 10,
+                ? screenWidth / 10
+                : screenWidth - screenWidth / 5 * 2.95,
             right: isSideBarOpen ? 0 : 0,
             child: Row(
               children: [
@@ -85,7 +105,7 @@ class _InfoCardState extends State<InfoCard>
                       },
                       child: Container(
                           decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: Color(0xFF1773CF),
                             borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(10),
                               bottomRight: Radius.circular(20),
@@ -99,7 +119,7 @@ class _InfoCardState extends State<InfoCard>
                                   height: screenWidth / 25,
                                   width: screenWidth / 20,
                                   decoration: BoxDecoration(
-                                    color: Colors.black,
+                                    color: Colors.black.withOpacity(0.6),
                                     borderRadius: BorderRadius.only(
                                       topLeft: Radius.circular(10),
                                       bottomRight: Radius.circular(10),
@@ -112,38 +132,45 @@ class _InfoCardState extends State<InfoCard>
                                   ),
                                 ),
                               ),
-                              Container(
-                                decoration: BoxDecoration(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(50)),
-                                  color: Colors.blue,
-                                ),
-                                height: screenHeight / 5 * 1.3,
-                                width: screenWidth / 5.5,
-                              ),
+                              Image.asset(exposant.logo,
+                                  height: screenWidth / screenHeight * 20),
+                              // Container(
+                              //   decoration: BoxDecoration(
+                              //     borderRadius:
+                              //         BorderRadius.all(Radius.circular(50)),
+                              //     image: Image.asset(widget.image),
+                              //   ),
+                              //   height: screenHeight / 5 * 1.3,
+                              //   width: screenWidth / 5.5,
+                              // ),
                               SizedBox(
                                 height: screenHeight / 30,
                               ),
                               Container(
                                 height: screenHeight / 10,
                                 child: Text(
-                                  "BMS Electric",
+                                  exposant.title,
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                       fontSize: 20,
-                                      fontWeight: FontWeight.bold),
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white),
                                 ),
                               ),
                               SizedBox(
                                 height: screenHeight / 30,
                               ),
                               Container(
+                                height: screenWidth/3*0.9,
+                                width: screenHeight/2,
                                 padding: EdgeInsets.all(5),
+                                color: Colors.black.withOpacity(0.0),
                                 child: Text(
-                                    "La société BMS ELECTRIC s’est engagée depuis  2001 dans la fabrication des accessoires et de l’appareillage électrique. Son personnel, hautement qualifié, se distingue par sa rapidité d’exécution et sa capacité à satisfaire les différentes exigences de ces clients et leur fournir une gamme de produits variée. Après seulement quatre années d’activité, la société devient le leader du marché algérien et ses produits sont distribués dans plusieurs pays étrangers. Avec le projet d’extension, BMS prévoit la création d’une centaine de nouveaux postes d’emploi ainsi que plusieurs autres chaines de fabrication entrant dans le cadre de la redynamisation du potentiel productif. Les efforts de l’équipe dirigeante de BMS ont amené cette dernière au stade de ‘’société industrielle’’ aujourd’hui fleuron de l’économie nationale.",
-                                    textAlign: TextAlign.left,
-                                    style: TextStyle(fontSize: 9),
-                                    ),
+                                  exposant.description,
+                                  textAlign: TextAlign.left,
+                                  style: TextStyle(fontSize: 13,
+                                  color: Colors.white),
+                                ),
                               ),
                             ],
                           )),
