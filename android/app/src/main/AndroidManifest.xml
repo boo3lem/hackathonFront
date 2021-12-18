@@ -7,7 +7,7 @@
 
     <application
         android:icon="@mipmap/ic_launcher"
-        android:label="hackathon">
+        android:label="TechMographie">
 
 
         <activity

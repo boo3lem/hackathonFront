@@ -2,12 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:hackathon/bottombar/info_card.dart';
 import 'package:hackathon/data/data-helper.dart';
 import 'package:hackathon/data/models/exposant.dart';
-import 'package:hackathon/data/models/pavion.dart';
 
 class FlagPage extends StatefulWidget {
-  final Exposant? exposant;
-
-  FlagPage({this.exposant});
+  FlagPage();
 
   @override
   FlagPageState createState() => FlagPageState();
@@ -22,7 +19,7 @@ class FlagPageState extends State<FlagPage> {
   late InfoCard card;
 
   final List<Exposant> exposants = DataHelper.getStands();
-  late ValueNotifier<Exposant> valueNotifier = ValueNotifier(exposants[0]);
+  late ValueNotifier<Exposant> valueNotifier = ValueNotifier(Exposant(0, "", "", "", "assets/bms.png"));
 
   @override
   Widget build(BuildContext context) {
@@ -1106,11 +1103,11 @@ class FlagPageState extends State<FlagPage> {
         child: Align(
           alignment: Alignment.topLeft,
           child: Container(
-            child: Icon(Icons.arrow_back_ios),
+            child: Icon(Icons.arrow_back_ios, color: Colors.white,),
             height: MediaQuery.of(context).size.height/12,
-            width: MediaQuery.of(context).size.width/25,
+            width: MediaQuery.of(context).size.width/17,
             decoration: BoxDecoration(
-              color: Colors.black.withOpacity(0.6),
+              color:Color(0xFF092E53),
               borderRadius: BorderRadius.only(bottomRight: Radius.circular(20))
             ),
           ),

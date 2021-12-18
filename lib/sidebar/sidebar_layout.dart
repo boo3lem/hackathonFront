@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hackathon/bottombar/info_card.dart';
 import 'package:hackathon/ui/home.dart';
 
 class SideBarLayout extends StatefulWidget {
