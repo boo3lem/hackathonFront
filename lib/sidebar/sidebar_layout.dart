@@ -1,6 +1,7 @@
 import 'package:anim_search_bar/anim_search_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:hackathon/bottombar/bottombar.dart';
+import 'package:hackathon/bottombar/info_card.dart';
 import 'package:hackathon/sidebar/sidebar.dart';
 import 'package:hackathon/ui/home.dart';
 
@@ -22,8 +23,7 @@ class _SideBarLayoutState extends State<SideBarLayout> {
       body: Stack(
         children: <Widget>[
           HomePage(),
-          //SideBar(),
-          BottomBar(),
+          InfoCard(),
         ],
       ),
     );

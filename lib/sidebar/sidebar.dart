@@ -6,6 +6,7 @@ import 'package:hackathon/data/database.dart';
 import 'package:hackathon/data/models/exposant.dart';
 import 'package:hackathon/data/models/stand.dart';
 import 'package:material_floating_search_bar/material_floating_search_bar.dart';
+import 'package:hackathon/bottombar/info_card.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -26,6 +27,7 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin {
   late StreamSink<bool> isSidebarOpenedSink;
   late FloatingSearchBarController textSearchController = FloatingSearchBarController();
   final _animationDuration = const Duration(milliseconds: 500);
+  final button= false;
   @override
   void initState() {
     // TODO: implement initState
@@ -92,7 +94,7 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin {
         searchMotif = '%'+textSearchController.query.toString()+'%';
         final database = await $FloorAppDatabase.databaseBuilder('app_database.db').build();
         final exposantDao = database.exposantDao;
-        final result = await exposantDao.findExposantByTitle(searchMotif);
+        final result = await exposantDao.findExposantsByTitle(searchMotif);
         List<Exposant> allStands = result as List<Exposant>;
 
         print('\n+++++++++++++++++++++++++\n');
@@ -163,12 +165,13 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin {
                   child: GestureDetector(
                     onTap: () {
                       onIconsPressed();
+
                       print(screenWidth);
                     },
                     child: ClipPath(
                       clipper: CustomMenuClipper(),
                       child: Container(
-                        height: screenWidth/10,
+                        height: screenWidth / 10,
                         width: screenWidth / 20,
                         color: Color(0xFF262AAA),
                         alignment: Alignment.centerLeft,
@@ -185,7 +188,8 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin {
                 Container(
                   height: screenWidth / 20,
                   width: screenWidth / 5 * 2.95,
-                )
+                ),
+                // InfoCard()
               ],
             ),
           );

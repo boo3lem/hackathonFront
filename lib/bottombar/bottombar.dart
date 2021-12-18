@@ -80,7 +80,7 @@ class _BottomBarState extends State<BottomBar>
                       height: 10,
                       margin: EdgeInsets.only(left: screenWidth / 2.8),
                       width: screenWidth / 5 * 3.1,
-                      color: Color(0xFF262AAA),
+                      color: Color(0xFF09C699),
                       alignment: Alignment.topCenter,
                       child: FractionallySizedBox(
                         widthFactor: 0.5,

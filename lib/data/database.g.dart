@@ -296,6 +296,12 @@ class _$ExposantDao extends ExposantDao {
   Future<void> insertExposant(Exposant exposant) async {
     await _exposantInsertionAdapter.insert(exposant, OnConflictStrategy.abort);
   }
+
+  @override
+  Future<List<Exposant>> findExposantsByTitle(String motif) {
+    // TODO: implement findExposantsByTitle
+    throw UnimplementedError();
+  }
 }
 
 class _$StandDao extends StandDao {
