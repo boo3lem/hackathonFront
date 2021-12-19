@@ -12,14 +12,16 @@ class FlagPage extends StatefulWidget {
 
 class FlagPageState extends State<FlagPage> {
   @override
-  void initState() {;
+  void initState() {
+    ;
     super.initState();
   }
 
   late InfoCard card;
 
   final List<Exposant> exposants = DataHelper.getStands();
-  late ValueNotifier<Exposant> valueNotifier = ValueNotifier(Exposant(0, "", "", "", "assets/bms.png"));
+  late ValueNotifier<Exposant> valueNotifier =
+      ValueNotifier(Exposant(0, "", "", "", "assets/bms.png"));
 
   @override
   Widget build(BuildContext context) {
@@ -35,15 +37,13 @@ class FlagPageState extends State<FlagPage> {
     );
   }
 
-                      
   _buildBody() {
     return _buildPv2();
   }
 
   _buildPv1() {
-    return Stack(
-
-      children:[ Container(
+    return Stack(children: [
+      Container(
         child: Column(
           children: [
             Row(
@@ -342,7 +342,7 @@ class FlagPageState extends State<FlagPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Image.asset('assets/enter.png'),
-                          Text("Entrer"),
+                          Text("Entrée"),
                         ],
                       ),
                     )),
@@ -494,13 +494,14 @@ class FlagPageState extends State<FlagPage> {
             ),
           ],
         ),
-      ),card]
-    );
+      ),
+      card
+    ]);
   }
 
   _buildPv2() {
-    return Stack(
-      children: [Container(
+    return Stack(children: [
+      Container(
         padding: EdgeInsets.all(hp(5)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -513,9 +514,9 @@ class FlagPageState extends State<FlagPage> {
                   InkWell(
                     onTap: () {
                       valueNotifier.value = exposants[0];
-                        card = new InfoCard(
-                          expandAction: valueNotifier,
-                        );
+                      card = new InfoCard(
+                        expandAction: valueNotifier,
+                      );
                     },
                     child: Ink(
                       height: scale(15),
@@ -590,7 +591,6 @@ class FlagPageState extends State<FlagPage> {
                   InkWell(
                     onTap: () {
                       valueNotifier.value = exposants[2];
-    
                     },
                     child: Ink(
                       height: scale(15),
@@ -635,7 +635,6 @@ class FlagPageState extends State<FlagPage> {
                   InkWell(
                     onTap: () {
                       valueNotifier.value = exposants[3];
-    
                     },
                     child: Ink(
                       height: scale(15),
@@ -679,12 +678,10 @@ class FlagPageState extends State<FlagPage> {
                   InkWell(
                     onTap: () {
                       valueNotifier.value = exposants[4];
-
                     },
                     child: Ink(
                       height: scale(15),
                       width: scale(15),
-    
                       decoration: BoxDecoration(
                         border: Border.all(width: 3, color: Colors.blue[300]!),
                         borderRadius: BorderRadius.only(
@@ -724,7 +721,6 @@ class FlagPageState extends State<FlagPage> {
                 InkWell(
                   onTap: () {
                     valueNotifier.value = exposants[5];
-
                   },
                   child: Ink(
                     height: scale(15),
@@ -765,7 +761,6 @@ class FlagPageState extends State<FlagPage> {
                 InkWell(
                   onTap: () {
                     valueNotifier.value = exposants[6];
-
                   },
                   child: Ink(
                     height: scale(15),
@@ -803,7 +798,6 @@ class FlagPageState extends State<FlagPage> {
                 InkWell(
                   onTap: () {
                     valueNotifier.value = exposants[7];
-
                   },
                   child: Ink(
                     height: scale(15),
@@ -844,7 +838,6 @@ class FlagPageState extends State<FlagPage> {
                 InkWell(
                   onTap: () {
                     valueNotifier.value = exposants[8];
-
                   },
                   child: Ink(
                     height: scale(15),
@@ -893,7 +886,7 @@ class FlagPageState extends State<FlagPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Image.asset('assets/enter.png', height: hp(5)),
-                          Text("Entrer"),
+                          Text("Entrée"),
                         ],
                       ),
                     )),
@@ -903,7 +896,6 @@ class FlagPageState extends State<FlagPage> {
                 InkWell(
                   onTap: () {
                     valueNotifier.value = exposants[9];
-
                   },
                   child: Ink(
                     height: scale(15),
@@ -946,7 +938,6 @@ class FlagPageState extends State<FlagPage> {
                 InkWell(
                   onTap: () {
                     valueNotifier.value = exposants[10];
-
                   },
                   child: Ink(
                     height: scale(15),
@@ -1021,7 +1012,6 @@ class FlagPageState extends State<FlagPage> {
                 InkWell(
                   onTap: () {
                     valueNotifier.value = exposants[12];
-
                   },
                   child: Ink(
                     height: scale(15),
@@ -1059,7 +1049,6 @@ class FlagPageState extends State<FlagPage> {
                 InkWell(
                   onTap: () {
                     valueNotifier.value = exposants[13];
-
                   },
                   child: Ink(
                     height: scale(15),
@@ -1097,25 +1086,43 @@ class FlagPageState extends State<FlagPage> {
         ),
       ),
       GestureDetector(
-        onTap: (){
+        onTap: () {
           Navigator.of(context).pop();
         },
         child: Align(
           alignment: Alignment.topLeft,
           child: Container(
-            child: Icon(Icons.arrow_back_ios, color: Colors.white,),
-            height: MediaQuery.of(context).size.height/12,
-            width: MediaQuery.of(context).size.width/17,
+            child: Icon(
+              Icons.arrow_back_ios,
+              color: Colors.white,
+            ),
+            height: MediaQuery.of(context).size.height / 12,
+            width: MediaQuery.of(context).size.width / 17,
             decoration: BoxDecoration(
-              color:Color(0xFF092E53),
-              borderRadius: BorderRadius.only(bottomRight: Radius.circular(20))
+                color: Color(0xFF092E53),
+                borderRadius:
+                    BorderRadius.only(bottomRight: Radius.circular(20))),
+          ),
+        ),
+      ),
+      Container(
+        child: Align(
+          alignment: Alignment.topCenter,
+          child: Container(
+            padding: EdgeInsets.only(top : 10),
+            child: Text(
+              'Pavillon Centrale',
+              style: TextStyle(
+                color: Color(0xFF092E53),
+                fontSize: 25,
+                fontWeight: FontWeight.w600
+              ),
             ),
           ),
         ),
       ),
-      card,]
-    );
-
+      card,
+    ]);
   }
 
   scale(int scale) {

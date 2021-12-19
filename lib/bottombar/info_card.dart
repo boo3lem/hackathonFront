@@ -172,8 +172,9 @@ class _InfoCardState extends State<InfoCard>
                                   color: Colors.white),
                                 ),
                               ),
+
                             ],
-                          )),
+                          ),),
                     ),
                   ),
                 ),

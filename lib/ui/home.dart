@@ -180,11 +180,10 @@ class HomePageState extends State<HomePage> {
 
   _loadMarkers() {
     return [
-
       Marker(
         width: 50.0,
         height: 50.0,
-        point: latLng.LatLng(36.735500001051355, 3.153200021802757),
+        point: latLng.LatLng(36.735100001051355, 3.155000021802757),
         builder: (ctx) => InkWell(
           borderRadius: BorderRadius.circular(5),
           onTap: () {},
@@ -194,14 +193,14 @@ class HomePageState extends State<HomePage> {
       Marker(
         width: 50.0,
         height: 50.0,
-        point: latLng.LatLng(36.734950681051355, 3.153980621802757),
+        point: latLng.LatLng(36.736130681051355, 3.152250621802757),
         builder: (ctx) => InkWell(
           borderRadius: BorderRadius.circular(5),
           onTap: () {},
           child: Icon(
             Icons.my_location,
-            color: Colors.red[400]!,
-            size: 30,
+            color: Colors.red[700]!,
+            size: 35,
           ),
         ),
       ),
@@ -212,7 +211,12 @@ class HomePageState extends State<HomePage> {
         builder: (ctx) => InkWell(
           borderRadius: BorderRadius.circular(5),
           onTap: () {
-            print('hello world');
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => FlagPage(),
+              ),
+            );
           },
           child: Image.asset('assets/location.png'),
         ),
@@ -224,12 +228,7 @@ class HomePageState extends State<HomePage> {
         builder: (ctx) => InkWell(
           borderRadius: BorderRadius.circular(5),
           onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => FlagPage(),
-              ),
-            );
+
           },
           child: Ink(
             decoration: BoxDecoration(
